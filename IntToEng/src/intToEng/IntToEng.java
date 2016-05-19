@@ -13,69 +13,76 @@ public class IntToEng {
     }
     
     static String translateEng(int n) {
-    	int s = n / 10;
-    	int t = n % 10;
+    	int s1 = n / 100;
+    	int t1 = n % 100;
+    	int s2 = n / 10;
+    	int t2 = n % 10;
+    	String hund = "";
     	String ten = "";
     	String one = "";
     	
-    	if(s == 1){
-    		if(n == 11){
+    	if(s1 == 1){
+    		hund = "one hundred ";
+    	}
+    	
+    	if(s2 == 1){
+    		if(t2 == 1){
     			ten = "eleven";
-    		}else if(n == 12){
+    		}else if(t2 == 2){
     			ten = "twelve";
-    		}else if(n == 13){
+    		}else if(t2 == 3){
     			ten = "thirteen";
-    		}else if(n == 14){
+    		}else if(t2 == 4){
     			ten = "fourteen";
-    		}else if(n == 15){
+    		}else if(t2 == 5){
     			ten = "fifteen";
-    		}else if(n == 16){
+    		}else if(t2 == 6){
     			ten = "sixteen";
-    		}else if(n == 17){
+    		}else if(t2 == 7){
     			ten = "seventeen";
-    		}else if(n == 18){
+    		}else if(t2 == 8){
     			ten = "eighteen";
-    		}else if(n == 19){
+    		}else if(t2 == 9){
     			ten = "nineteen";
     		}
-    	}else if(s==2){
+    	}else if(s2==2){
     		ten = "twenty";
-    	}else if(s==3){
+    	}else if(s2==3){
     		ten = "thirty";
-    	}else if(s==4){
+    	}else if(s2==4){
     		ten = "fourty";
-    	}else if(s==5){
+    	}else if(s2==5){
     		ten = "fifty";
-    	}else if(s==6){
+    	}else if(s2==6){
     		ten = "sixty";
-    	}else if(s==7){
+    	}else if(s2==7){
     		ten = "seventy";
-    	}else if(s==8){
+    	}else if(s2==8){
     		ten = "eighty";
-    	}else if(s==9){
+    	}else if(s2==9){
     		ten = "ninety";
-    	}else if(s==10){
+    	}else if(s2==10){
     		ten = "hundred";
     	}
     	
-    	if(s != 1 && s != 10){
-    		if(t == 1){
-    			one = "one";
-    		}else if(t == 2){
+    	if(s2 != 1 && s2 != 10){
+    		if(t2 == 1){
+    			one = "one";  
+    		}else if(t2 == 2){
     			one = "two";
-    		}else if(t == 3){
+    		}else if(t2 == 3){
     			one = "three";
-    		}else if(t == 4){
+    		}else if(t2 == 4){
     			one = "four";
-    		}else if(t == 5){
+    		}else if(t2 == 5){
     			one = "five";
-    		}else if(t == 6){
+    		}else if(t2 == 6){
     			one = "six";
-    		}else if(t == 7){
+    		}else if(t2 == 7){
     			one = "seven";
-    		}else if(t == 8){
+    		}else if(t2 == 8){
     			one = "eight";
-    		}else if(t == 9){
+    		}else if(t2 == 9){
     			one = "nine";
     		}
     	}
