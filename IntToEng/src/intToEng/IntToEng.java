@@ -1,3 +1,5 @@
+package intToEng;
+
 import java.util.Scanner;
 
 //package intToEng;
@@ -49,29 +51,33 @@ public class IntToEng {
     	}else if(s==7){
     		ten = "seventy";
     	}else if(s==8){
-    		ten = "eigthty";
+    		ten = "eighty";
     	}else if(s==9){
     		ten = "ninety";
+    	}else if(s==10){
+    		ten = "hundred";
     	}
     	
-    	if(t == 1){
-    		one = "one";
-    	}else if(t == 2){
-    		one = "two";
-    	}else if(t == 3){
-    		one = "three";
-    	}else if(t == 4){
-    		one = "four";
-    	}else if(t == 5){
-    		one = "five";
-    	}else if(t == 6){
-    		one = "six";
-    	}else if(t == 7){
-    		one = "seven";
-    	}else if(t == 8){
-    		one = "eight";
-    	}else if(t == 9){
-    		one = "nine";
+    	if(s != 1 && s != 10){
+    		if(t == 1){
+    			one = "one";
+    		}else if(t == 2){
+    			one = "two";
+    		}else if(t == 3){
+    			one = "three";
+    		}else if(t == 4){
+    			one = "four";
+    		}else if(t == 5){
+    			one = "five";
+    		}else if(t == 6){
+    			one = "six";
+    		}else if(t == 7){
+    			one = "seven";
+    		}else if(t == 8){
+    			one = "eight";
+    		}else if(t == 9){
+    			one = "nine";
+    		}
     	}
     	
         return ten + one;
