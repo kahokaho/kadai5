@@ -31,7 +31,7 @@ public class testIntToEng {
 		String actual5 = ite.translateEng(85);
 		assertThat(actual5, is(expected5));
 		
-		String expected6 = "fourtysix";
+		String expected6 = "fortysix";
 		String actual6 = ite.translateEng(46);
 		assertThat(actual6, is(expected6));
 		

@@ -13,80 +13,45 @@ public class IntToEng {
     }
     
     static String translateEng(int n) {
-    	int s1 = n / 100;
-    	int t1 = n % 100;
-    	int s2 = n / 10;
-    	int t2 = n % 10;
-    	String hund = "";
-    	String ten = "";
     	String one = "";
+    	String ten = "";
+    	String hund = "";
+    	String[] num1 = {"one", "two", "three", "four","five", "six", 
+    			"seven", "eight", "nine","ten", "eleven", "twelve", "thirteen", 
+    			"fourteen","fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
+    	String[] num2 = {"twenty", "thirty", "forty", "fifty", "sixty","seventy", 
+    			"eighty", "ninety"};
     	
-    	if(s1 == 1){
-    		hund = "one hundred ";
-    	}
     	
-    	if(s2 == 1){
-    		if(t2 == 1){
-    			ten = "eleven";
-    		}else if(t2 == 2){
-    			ten = "twelve";
-    		}else if(t2 == 3){
-    			ten = "thirteen";
-    		}else if(t2 == 4){
-    			ten = "fourteen";
-    		}else if(t2 == 5){
-    			ten = "fifteen";
-    		}else if(t2 == 6){
-    			ten = "sixteen";
-    		}else if(t2 == 7){
-    			ten = "seventeen";
-    		}else if(t2 == 8){
-    			ten = "eighteen";
-    		}else if(t2 == 9){
-    			ten = "nineteen";
+    	if(n < 20){
+    		one = num1[n-1];
+    	}else if(20 <= n || 99 >= n){
+    		int s = n / 10;
+    		int t = n % 10;
+    		ten = num2[s-2];
+    		if(t>0){
+    			one = num1[t-1];
     		}
-    	}else if(s2==2){
-    		ten = "twenty";
-    	}else if(s2==3){
-    		ten = "thirty";
-    	}else if(s2==4){
-    		ten = "fourty";
-    	}else if(s2==5){
-    		ten = "fifty";
-    	}else if(s2==6){
-    		ten = "sixty";
-    	}else if(s2==7){
-    		ten = "seventy";
-    	}else if(s2==8){
-    		ten = "eighty";
-    	}else if(s2==9){
-    		ten = "ninety";
-    	}else if(s2==10){
-    		ten = "hundred";
-    	}
-    	
-    	if(s2 != 1 && s2 != 10){
-    		if(t2 == 1){
-    			one = "one";  
-    		}else if(t2 == 2){
-    			one = "two";
-    		}else if(t2 == 3){
-    			one = "three";
-    		}else if(t2 == 4){
-    			one = "four";
-    		}else if(t2 == 5){
-    			one = "five";
-    		}else if(t2 == 6){
-    			one = "six";
-    		}else if(t2 == 7){
-    			one = "seven";
-    		}else if(t2 == 8){
-    			one = "eight";
-    		}else if(t2 == 9){
-    			one = "nine";
+    	}else if(100 <= n || 999 >= n){
+    		int m = n / 100;
+    		int j = n % 100;
+    		if(j == 0){
+    			hund = num1[m-1]+"hundred";
+    		}else{
+    			hund = num1[m-1]+"hundred and ";
+    		}
+    		if(j < 20){
+    			one = num1[n-1];
+    		}else if(20 <= n || 99 >= n){
+    			int s = j / 10;
+    			int t = j % 10;
+    			ten = num2[s-2];
+    			if(t>0){
+    				one = num1[t-1];
+    			}
     		}
     	}
     	
-        return ten + one;
+        return hund + ten + one;
     }
 }
