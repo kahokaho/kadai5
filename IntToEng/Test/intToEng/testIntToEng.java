@@ -19,7 +19,7 @@ public class testIntToEng {
 		String actual2 = ite.translateEng(24);
 		assertThat(actual2, is(expected2));
 		
-		String expected3 = "hundred";
+		String expected3 = "onehundred";
 		String actual3 = ite.translateEng(100);
 		assertThat(actual3, is(expected3));
 		
